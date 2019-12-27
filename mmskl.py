@@ -26,7 +26,6 @@ config_shortcut = dict(
     pose_demo_HD='./configs/pose_estimation/pose_demo_HD.yaml',
     pose_demo='./configs/pose_estimation/pose_demo.yaml')
 
-
 def parse_cfg():
 
     parser = argparse.ArgumentParser(description='Run a processor.')
@@ -108,14 +107,12 @@ def parse_cfg():
     cfg = replace(cfg, **format_args)
     return cfg
 
-
 def main():
     cfg = parse_cfg()
     if 'processor_cfg' in cfg:
         call_obj(**cfg.processor_cfg)
     else:
         print('No processor specified.')
-
 
 if __name__ == "__main__":
     main()
